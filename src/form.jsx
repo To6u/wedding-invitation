@@ -1,33 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import {useRef, useState} from "react";
 
 export const FormApprove = () => {
     const errorMessageText = "Заполните пожалуйста поля, чтобы нам было проще принимать решения.";
 
     const formRef = useRef();
-    const [isClickSend, setIsClickSend] = useState(false);
     const [error, setError] = useState("");
 
-    useEffect(() => {
-        /**
-        if (name === "" && lastName === "" && !Boolean(drink.length) && isClickSend) {
-            setError(errorMessageText);
-        } else {
-            setError("");
-        }
-        */
-    }, []);
-
-    const isInputElement = (type) => type == "select-one" || type == "checkbox" || type == "text";
+    const isInputElement = (type) => type === "select-one" || type === "checkbox" || type === "text";
 
     const onSendHandl = (e) => {
         e.preventDefault();
-        setIsClickSend(true);
 
         const formInputs = Object.values(formRef.current).filter((input) => isInputElement(input.type));
         const checkedCheckboxsValues = formInputs.filter((input) => input.checked).map((input) => input.value);
-        const name = formInputs.filter((input) => input.name == "name").map((input) => input.value);
-        const lastName = formInputs.filter((input) => input.name == "lastname").map((input) => input.value);
-        const approve = formInputs.filter((input) => input.name == "approve").map((input) => input.value);
+        const name = formInputs.filter((input) => input.name === "name").map((input) => input.value);
+        const lastName = formInputs.filter((input) => input.name === "lastname").map((input) => input.value);
+        const approve = formInputs.filter((input) => input.name === "approve").map((input) => input.value);
 
         if (!checkedCheckboxsValues.length || !name.length || !lastName.length) {
             setError(errorMessageText);
