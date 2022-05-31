@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {LandingPage} from "./page";
+
+const guestList = [
+  "Максим и Дарья",
+  "Лена и Рома",
+  "Александр и Анастасия",
+  "Алексей и Вироника",
+  "Владимир и Аня",
+]
 
 function App() {
+
+  const generatePages = guestList.map((item, index) => {
+    return (
+      <Route key={index} path={`/${index}`} element={<LandingPage guestNames={item} />} />
+    )
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+        <Routes>
+          {generatePages}
+        </Routes>
+    </BrowserRouter>
+    )
 }
 
 export default App;
