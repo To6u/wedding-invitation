@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {HashRouter, Routes, Route} from "react-router-dom";
 import {LandingPage} from "./page";
 
 const guestList = [
@@ -11,7 +11,6 @@ const guestList = [
 ]
 
 function App() {
-
   const generatePages = guestList.map((item, index) => {
     return (
       <Route key={index} path={`/${index}`} element={<LandingPage guestNames={item} />} />
@@ -19,11 +18,12 @@ function App() {
   })
 
   return (
-    <BrowserRouter>
+    <HashRouter>
         <Routes>
+          <Route path='/' element={<LandingPage guestNames="Максим и Дарья" />}/>
           {generatePages}
         </Routes>
-    </BrowserRouter>
+    </HashRouter>
     )
 }
 
