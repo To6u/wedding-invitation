@@ -32,10 +32,11 @@ export const FormApprove = () => {
     return <form onSubmit={onSendHandl} ref={formRef}>
         <label>
             <input className="input" name="name" pattern="^[А-Яа-яЁё\s]+$" placeholder="Имя" type="text" required={true}></input>
+            <div className="message-required">Можно вводить только буквы</div>
         </label>
         <label>
             <input className="input" name="lastname" pattern="^[А-Яа-яЁё\s]+$" placeholder="Фамилия" type="text" required={true}></input>
-
+            <div className="message-required">Можно вводить только буквы</div>
         </label>
         <label className="select-box">
             <span className="title">Присутствие:</span>
