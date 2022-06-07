@@ -1,0 +1,180 @@
+
+.form-approve form {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    justify-content: start;
+    justify-items: start;
+    padding: 0 40px 0 0;
+  }
+  
+.form-approve form .btn-container {
+    margin-top: 24px;
+}
+  
+label {
+    width: 100%;
+    cursor: pointer;
+}
+  
+label span.title, .checkboxes-container .title {
+    font-family: 'Playfair Display SC', serif;
+    font-size: 20px;
+    font-weight: 600;
+	margin-bottom: 8px;
+}
+  
+label.select-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+  
+label.select-box span {
+    margin-bottom: 8px;
+}
+  
+input[type="text"], select {
+    padding: 0 16px 0 2px;
+    box-sizing: border-box;
+    height: 40px;
+    width: 100%;
+    border: 0 solid transparent;
+    border-bottom: 1px solid #acacac;
+    font-size: 18px;
+    outline: 0 solid transparent;
+    font-family: 'Merriweather', serif;
+    transition: border .15s ease-in-out;
+}
+  
+input[type="text"]:hover, select:hover, 
+input[type="text"]:focus, select:focus {
+    border-bottom: 2px solid #a58fe1;
+}
+  
+select {
+    cursor: pointer;
+}
+  
+.error-text {
+    font-size: 13px;
+    color: rgb(203, 125, 61);
+    margin: 0;
+}
+
+.checkbox {
+	display: block;
+	margin: 0 0 10px 0;
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+}
+
+.checkbox span {
+	display: block;
+	width: max-content;
+	position: relative; 
+	padding: 0 0 0 35px; 
+	line-height: 22px; 
+}
+
+.checkbox span:before {
+	content: "";
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 1px solid #acacac;
+	border-radius: 4px;
+	transition: all 0.15s ease-in-out;
+}
+
+.checkbox span::after {
+	transition: color 0.15s ease-in-out;
+}
+ 
+/* Focus */
+label input[type=checkbox]:focus + span {
+	transition: color 0.15s ease-in-out;
+}
+
+/* Checked */
+.checkbox input[type=checkbox]:checked + span {
+	color: #a58fe1;
+}
+
+.checkbox input[type=checkbox]:checked + span::after {
+	content: "+";
+    position: absolute;
+    top: 0;
+    left: 7px;
+    transform: scale(2);
+    color: #a58fe1;
+}
+
+.checkbox input[type=checkbox]:checked + span::before {
+	border-color: #a58fe1;
+}
+
+label input[type="checkbox"] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+  
+.btn-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 24px;
+    align-items: center;
+}
+  
+input[type="submit"] {
+	background: transparent;
+    height: 56px;
+    border-radius: 4px;
+    padding: 0 56px 4px 56px;
+    border-width: 0;
+    border: 2px solid #a58fe1;
+    font-family: 'Playfair Display SC', serif;
+    font-weight: bold;
+    font-size: 18px;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+  
+input[type="submit"]:hover {
+    background-color: #a58fe1;
+    color: white;
+}
+  
+.checkboxes-container {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-row-gap: 8px;
+    justify-items: start;
+    width: 100%;
+    text-align: left;
+}
+  
+.checkboxes-container label {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    grid-column-gap: 12px;
+    justify-items: start;
+    align-items: center;
+}
+  
+.message-required {
+    font-size: 12px;
+    color: #acacac;
+    text-align: left;
+    margin-top: 4px;
+}
+

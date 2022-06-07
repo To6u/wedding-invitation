@@ -1,4 +1,5 @@
 import {useRef, useState} from "react";
+import "./form.css";
 
 export const FormApprove = () => {
     const errorMessageText = "Заполните пожалуйста поля, чтобы нам было проще принимать решения.";
@@ -48,19 +49,19 @@ export const FormApprove = () => {
         </label>
         <div className="checkboxes-container drink-checkboxes">
             <span className="title">Буду пить:</span>
-            <label>
+            <label className="checkbox">
                 <input type="checkbox" value="Вино" /> <span>Вино</span>
             </label>
-            <label>
+            <label className="checkbox">
                 <input type="checkbox" value="Водку" /> <span>Водку</span>
             </label>
-            <label>
+            <label className="checkbox">
                 <input type="checkbox" value="Коньяк" /> <span>Коньяк</span>
             </label>
-            <label>
+            <label className="checkbox">
                 <input type="checkbox" value="Шампанское" /> <span>Шампанское</span>
             </label>
-            <label>
+            <label className="checkbox">
                 <input type="checkbox" value="Что - нибудь безалкогольное" /> <span>Что - нибудь безалкогольное</span>
             </label>
         </div>
